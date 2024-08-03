@@ -1,70 +1,108 @@
-# Getting Started with Create React App
+# Bank of Flatiron
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to the Bank of Flatiron, where you can trust us with all your financial data!
 
-## Available Scripts
+## Instructions
 
-In the project directory, you can run:
+For this project, you’ll be building out a React application that displays a list of your recent bank transactions, among other features.
 
-### `npm start`
+Part of what this code challenge is testing is your ability to follow given instructions. While you will definitely have a significant amount of freedom in how you implement the features, be sure to carefully read the directions for setting up the application.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Endpoints
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+**The data to be used is in the `db.json` file inside this repo. Copy this data and paste in into your own `db.json` file in the root of your project.**
 
-### `npm test`
+If using `Create React App`, ensure you run the JSON Server first before running the React Server. This is because both run on port 3000 by default but React's local server can find another server to run on if port 3000 is already taken by JSON Server.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Core Deliverables
 
-### `npm run build`
+As a user, I should be able to:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- See a table of the transactions.
+- Fill out and submit the form to add a new transaction. This should add the new transaction to the table **as well as post the new transaction to the backend API for persistence**.
+- Filter transactions by typing into the search bar. Only transactions with a description matching the search term should be shown in the transactions table.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+NB: **Deploy both your frontend and the `db.json` once you are done and ensure to change the URL you're fetching from to the deployed backend. Undeployed work will not be graded.**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Endpoints for Core Deliverables
 
-### `npm run eject`
+#### GET /transactions
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Example Response:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```json
+[
+	{
+		"id": 1,
+		"date": "2019-12-01",
+		"description": "Paycheck from Bob's Burgers",
+		"category": "Income",
+		"amount": 1000
+	},
+	{
+		"id": 2,
+		"date": "2019-12-01",
+		"description": "South by Southwest Quinoa Bowl at Fresh & Co",
+		"category": "Food",
+		"amount": -10.55
+	}
+]
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+#### POST `/transactions`
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Required Headers:
 
-## Learn More
+```js
+{
+  "Content-Type": "application/json"
+}
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Request Object:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```json
+{
+  "date": "string",
+  "description": "string",
+  "category": "string",
+  "amount": number
+}
+```
 
-### Code Splitting
+Example Response:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```json
+{
+	"id": 1,
+	"date": "2019-12-01",
+	"description": "Paycheck from Bob's Burgers",
+	"category": "Income",
+	"amount": 1000
+}
+```
 
-### Analyzing the Bundle Size
+## Advanced Deliverables
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+These deliverables are not required to pass the code challenge, but if you have
+the extra time, or even after the code challenge, they are a great way to
+stretch your skills.
 
-### Making a Progressive Web App
+> Note: If you are going to attempt these advanced deliverables, please be sure to have a working commit with all the Core Deliverables first!
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+As a user, I should be able to:
 
-### Advanced Configuration
+- Sort transactions alphabetically by category or description.
+- Delete a transaction which will remove it from the table and delete it from the backend.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### Endpoints for Advanced Deliverables
 
-### Deployment
+#### DELETE /transactions/:id
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Example Response:
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```json
+{}
+```
+## Project by:
+Mark Njau
