@@ -1,23 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+
+import React, { useState } from 'react';
+import TransactionForm from './Components/TransactionForm';
+import TransactionTable from './Components/TransactionTable';
+import SearchBar from './Components/SearchBar';
 
 function App() {
+  const [searchTerm, setSearchTerm] = useState("")
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <SearchBar setSearchTerm={setSearchTerm} />
+      <TransactionForm />
+      <TransactionTable searchTerm={searchTerm} />
     </div>
   );
 }
