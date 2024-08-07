@@ -1,0 +1,22 @@
+form {
+    padding: 20px;
+    border-radius: 5px;
+    margin-top: 20px;
+    border: 3px solid black;
+}
+
+form input {
+    display: block;
+    margin: 10px 0;
+    padding: 10px;
+    border: 2px solid;
+    border-radius: 3px;
+    border: 3px solid black;
+}
+
+form button {
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 3px;
+}

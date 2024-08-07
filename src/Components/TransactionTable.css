@@ -13,10 +13,12 @@ th,td {
     padding: 11px;
     text-align: left;
     border-bottom: 1px;
+    border: 3px solid black;
 }
 
 th {
     cursor: pointer;
+    border: 3px solid black;
 }
 
 button {
