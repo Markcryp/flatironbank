@@ -13,7 +13,7 @@ useEffect(() => {
 
 const filteredTransactions = transactions.filter(transaction =>
     transaction.description.toLowerCase().includes(searchTerm.toLowerCase())
-);
+); 
 
 const handleDelete = (id) => {
     fetch(`http://localhost:3000/transactions/${id}`, {method: 'DELETE'})
