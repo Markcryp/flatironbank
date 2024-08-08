@@ -8,6 +8,18 @@ For this project, you’ll be building out a React application that displays a l
 
 Part of what this code challenge is testing is your ability to follow given instructions. While you will definitely have a significant amount of freedom in how you implement the features, be sure to carefully read the directions for setting up the application.
 
+## Technologies Used
+1 React(JSX)
+
+## Setup
+
+Run this command to get the backend started:
+
+```console
+$ json-server --watch db.json
+```
+Run npm install then run imps start to go to the server.
+
 ## Endpoints
 
 **The data to be used is in the `db.json` file inside this repo. Copy this data and paste in into your own `db.json` file in the root of your project.**
@@ -106,3 +118,12 @@ Example Response:
 ```
 ## Project by:
 Mark Njau
+
+## License
+THis project is licensed under the MIT License.
+
+## Contacts
+For any questions or suggestions,please open an issue or contact mark.njau@student.moringaschool.com
+
+## Vercel Link
+[link]()
