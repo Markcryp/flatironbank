@@ -11,7 +11,7 @@ function TransactionForm() {
         event.preventDefault();
         const newTransaction = {date, description, category,amount:parseFloat(amount)};
 
-        fetch("http://localhost:3000/transactions",{
+        fetch("https://flatironbank-backend.vercel.app/transactions",{
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(newTransaction),

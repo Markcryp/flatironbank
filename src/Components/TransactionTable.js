@@ -6,7 +6,7 @@ function TransactionTable({searchTerm}) {
 
 
 useEffect(() => {
-    fetch("http://localhost:3000/transactions")
+    fetch("https://flatironbank-backend.vercel.app/transactions")
     .then(response => response.json())
     .then(data => setTransactions(data))
     .catch(error => console.error('Error fetching transactions:',error))
@@ -17,7 +17,7 @@ const filteredTransactions = transactions.filter(transaction =>
 ); 
 
 const handleDelete = (id) => {
-    fetch(`http://localhost:3000/transactions/${id}`, {method: 'DELETE'})
+    fetch(`https://flatironbank-backend.vercel.app/transactions/${id}`, {method: 'DELETE'})
     .then(() => setTransactions(transactions.filter(t => t.id !== id)))
     .catch(error => console.error('Error deleting transaction:',error));
 };
